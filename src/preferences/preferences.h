@@ -1325,6 +1325,15 @@ public:
   void setTrayIconStyle(TrayIcon::Style style) {
     setValue(QString::fromUtf8("Preferences/Advanced/TrayIconStyle"), style);
   }
+  
+  // IPv6-Only Operation
+  bool isV6Only() const {
+    return value(QString::fromUtf8("Preferences/Advanced/V6Only"), false).toBool();
+  }
+
+  void setV6Only(bool enabled) {
+    setValue(QString::fromUtf8("Preferences/Advanced/V6Only"), enabled);
+  }
 };
 
 #endif // PREFERENCES_H
